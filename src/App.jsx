@@ -14,6 +14,7 @@ const App = () => {
     english: [],
     french: [],
   });
+  const [showScore, setShowScore] = useState(false);
 
   
 
@@ -142,7 +143,14 @@ const App = () => {
                   ))}
                 </div>
               </div>
-              <div className="wrong-attempts">Wrong Attempts: {wrongAttempts}</div>
+              
+              <div className="controls">
+                <div className="wrong-attempts">Wrong Attempts: {wrongAttempts}</div>
+                <button className="grade-btn" onClick={() => setShowScore(true)}>
+                  Grade Me
+                </button>
+                {showScore && <ScoreDisplay correctTranslations={correctTranslations} totalWords={totalWords} />}
+              </div>
               <div className="progress-bar">
                 <div className={`progress-bar-fill ${progressPercentage >= 75 ? 'on-fire' : ''}`} style={{ width: `${progressPercentage}%` }}></div>
               </div>
@@ -161,6 +169,16 @@ const CardComponent = ({ word, selected, incorrect, correct, onClick }) => {
       onClick={onClick}
     >
       {word}
+    </div>
+  );
+};
+
+const ScoreDisplay = ({ correctTranslations, totalWords }) => {
+  const score = correctTranslations.length;
+  const percentage = ((score / totalWords) * 100).toFixed(2); // Calculate percentage and round to 2 decimal places
+  return (
+    <div className="score-display">
+      {percentage}%
     </div>
   );
 };
