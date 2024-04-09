@@ -16,11 +16,11 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  margin-top: 50px;
+  margin-top: 1px;
 }
 
 .column {
-  margin: 20px;
+  margin: 10px;
   background-color: transparent;
   padding: 20px;
 }
@@ -79,7 +79,7 @@ body {
 
 /* Wrong Attempts */
 .wrong-attempts {
-  margin-top: 30px;
+  margin-top: 1px;
   font-size: 18px;
   font-weight: bold;
   color: #ff6347;
@@ -88,7 +88,7 @@ body {
 /* Progress Bar */
 .progress-bar {
   width: 80%;
-  height: 30px;
+  height: 20px;
   background-color: #333333;
   margin: 30px auto;
   border-radius: 15px;
@@ -115,4 +115,96 @@ body {
   100% {
     box-shadow: 0 0 10px #ffd700;
   }
+}
+
+/* Winning Message */
+
+
+.winning-message {
+  background-color: #ffd700;
+  color: #000000;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: winningAnimation 1s ease-in-out infinite;
+  z-index: 1000;
+}
+
+.new-game-btn {
+  background-color: #212121;
+  color: #ffd700;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px 20px;
+  border: 2px solid #ffd700;
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 70px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.new-game-btn:hover {
+  background-color: #ffd700;
+  color: #000000;
+}
+
+@keyframes winningAnimation {
+  0% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 255, 255, 1);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  }
+}
+
+
+/* Splash Screen */
+.splash-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%) no-repeat;
+  background-attachment: fixed;
+}
+
+.splash-screen h1 {
+  font-size: 48px;
+  color: #ffd700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+.start-game-btn {
+  background-color: #ffd700;
+  color: #000000;
+  font-size: 24px;
+  font-weight: bold;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.start-game-btn:hover {
+  background-color: #ffdb4d;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
