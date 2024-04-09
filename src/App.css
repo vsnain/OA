@@ -208,3 +208,25 @@ body {
   background-color: #ffdb4d;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.wrong-attempts {
+  margin-right: 20px;
+}
+
+.grade-btn {
+  margin-right: 20px;
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.score-display {
+  font-size: 18px;
+  font-weight: bold;
+}
